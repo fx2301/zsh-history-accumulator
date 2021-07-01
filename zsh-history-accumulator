@@ -1,0 +1,5 @@
+function record_command() {
+  echo "$(date +"%Y-%m-%d %H-%M-%S")|$$|$1" >> $HOME/.zsh-history-accumulation
+}
+autoload -Uz add-zsh-hook
+add-zsh-hook preexec record_command
